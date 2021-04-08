@@ -33,3 +33,13 @@
     text-decoration: none;
     padding-right: 2rem;
 }
+
+.wrapp-login {
+    font-size: 26px;
+    margin-top: 2px;
+}
+
+.wrapp-login span{
+    color:#7FFFD4;
+    font-size: 26px;
+}

@@ -10,6 +10,11 @@ const Header = () => {
             <div  className='links'>
                 <NavLink className="another-link" to="/">Калькулятор</NavLink>
                 <NavLink className="support-link" to="/support">О нас</NavLink>
+                <div className="wrapp-login d-flex align-items-center ml-4">
+                    <NavLink className="support-link mr-2" to="#">Вход</NavLink>
+                    <span>|</span>
+                    <NavLink className="support-link ml-2" to="#t">Регистрация</NavLink>
+                </div>
             </div>
         </header>
     )
