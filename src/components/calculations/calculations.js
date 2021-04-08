@@ -1,10 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './calculations.css';
 import imgCar from './imgCar.png';
 
-const Calculations = () => {
-    return (
-        <div className="calculation">
+
+export default class Calculation extends Component{
+    state = {
+        tenure: 15,
+        creditTerm: 15,
+    };
+
+    onTenureChange = (e) => {
+        //console.log(e.target.value);
+        this.setState({tenure: e.target.value});
+        console.log(this.state.tenure);
+    };
+    
+    onCreditTermChange = (e) => {
+        this.setState({creditTerm: e.target.value});
+    };
+
+    render(){
+        return (
+            <div className="calculation">
             <form className='justify-content-center'>
                 <h1>Обьект расcчётов</h1>
                 <div className='object'>
@@ -37,33 +54,19 @@ const Calculations = () => {
                         <div className="form-group">
                             <label class="form-label">Стоимость автомобиля</label>
                             <input type="text" class="form-control"/>
-                            <div class="form-group mt-2">
-                                <input type="range" class="form-control-range" id="formControlRange"/>
-                                <div className="row f-flex justify-content-between">
-                                    <span>45 000</span>
-                                    <span>450 000</span>
-                                </div>
-                            </div>
                         </div>
                         <div className="form-group">
                             <label class="form-label">Первоначальный взнос</label>
                             <input type="text" class="form-control"/>
-                            <div class="form-group mt-2">
-                                <input type="range" class="form-control-range" id="formControlRange"/>
-                                <div className="row f-flex justify-content-between">
-                                    <span>45 000</span>
-                                    <span>450 000</span>
-                                </div>
-                            </div>
                         </div>
                         <div className="form-group">
-                            <label class="form-label">Срок кредита</label>
-                            <input type="text" class="form-control"/>
+                            <label class="form-label">Срок кредита:</label>
+                            <span className="ml-2">{this.state.creditTerm} лет</span>
                             <div class="form-group mt-2">
-                                <input type="range" class="form-control-range" id="formControlRange"/>
+                                <input type="range" class="form-control-range" min="1" max="30" step="1" value={this.state.creditTerm} onChange={this.onCreditTermChange}/>
                                 <div className="row f-flex justify-content-between">
-                                    <span>45 000</span>
-                                    <span>450 000</span>
+                                    <span>1</span>
+                                    <span>30</span>
                                 </div>
                             </div>
                         </div>
@@ -95,15 +98,15 @@ const Calculations = () => {
                     <div className="row">
                         <div className="col-4">
                             <div className="form-group">
-                                <label class="form-label">Предпологаемый срок владения</label>
-                                <input type="text" class="form-control"/>
+                                <label class="form-label">Предпологаемый срок владения:</label>
+                                <span className="ml-2">{this.state.tenure} лет</span>
                                 <div class="form-group mt-2">
-                                <input type="range" class="form-control-range" id="formControlRange"/>
-                                <div className="row f-flex justify-content-between">
-                                    <span>45 000</span>
-                                    <span>450 000</span>
+                                    <input type="range" class="form-control-range" min="1" max="30" step="1" value={this.state.tenure} onChange={this.onTenureChange}/>
+                                    <div className="row f-flex justify-content-between">
+                                        <span>1</span>
+                                        <span>30</span>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
@@ -166,35 +169,14 @@ const Calculations = () => {
                                 <div className="form-group">
                                     <label class="form-label">Налог</label>
                                     <input type="text" class="form-control"/>
-                                    <div class="form-group mt-2">
-                                        <input type="range" class="form-control-range" id="formControlRange"/>
-                                        <div className="row f-flex justify-content-between">
-                                            <span>45 000</span>
-                                            <span>450 000</span>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div className="form-group">
                                     <label class="form-label">Стоимость ТО</label>
                                     <input type="text" class="form-control"/>
-                                    <div class="form-group mt-2">
-                                        <input type="range" class="form-control-range" id="formControlRange"/>
-                                        <div className="row f-flex justify-content-between">
-                                            <span>45 000</span>
-                                            <span>450 000</span>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div className="form-group">
                                     <label class="form-label">Стоимость комплекта зимней резины</label>
                                     <input type="text" class="form-control"/>
-                                    <div class="form-group mt-2">
-                                        <input type="range" class="form-control-range" id="formControlRange"/>
-                                        <div className="row f-flex justify-content-between">
-                                            <span>45 000</span>
-                                            <span>450 000</span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div className="col-4"></div>
@@ -202,13 +184,6 @@ const Calculations = () => {
                                 <div className="form-group">
                                     <label class="form-label">Страховка</label>
                                     <input type="text" class="form-control"/>
-                                    <div class="form-group mt-2">
-                                        <input type="range" class="form-control-range" id="formControlRange"/>
-                                        <div className="row f-flex justify-content-between">
-                                            <span>45 000</span>
-                                            <span>450 000</span>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div className="form-group d-flex flex-column">
                                     <label class="form-label">Переодичность проведения ТО</label>
@@ -220,13 +195,6 @@ const Calculations = () => {
                                 <div className="form-group">
                                     <label class="form-label">Стоимость комплекта летней резины</label>
                                     <input type="text" class="form-control"/>
-                                    <div class="form-group mt-2">
-                                        <input type="range" class="form-control-range" id="formControlRange"/>
-                                        <div className="row f-flex justify-content-between">
-                                            <span>45 000</span>
-                                            <span>450 000</span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +234,7 @@ const Calculations = () => {
                 </div>
             </form>
         </div>
-    )
+        )
+    };
 };
 
-export default Calculations;
