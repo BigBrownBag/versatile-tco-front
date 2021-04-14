@@ -1,10 +1,10 @@
 import React from 'react';
-import './footer.css';
+import style from './footer.module.css';
 import text from './versatile-text.png';
 
 const Footer = () => {
     return (
-       <footer className='footer sticky-bottom'>
+       <footer className={style.footer}>
            <img src={text} alt="logo"/>
        </footer> 
     )

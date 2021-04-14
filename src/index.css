@@ -1,26 +1,26 @@
 body {
-    background:#7FFFD4;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: normal;
+  background:#7FFFD4;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
 }
 input {
-    border: 1px solid #7FFFD4 !important;
-    border-radius: 10px;
+  border: 1px solid #7FFFD4 !important;
+  border-radius: 10px;
 }
 select{
-    border: 1px solid #7FFFD4 !important;
-    border-radius: 10px;
-    box-shadow:none !important;
+  border: 1px solid #7FFFD4 !important;
+  border-radius: 10px;
+  box-shadow:none !important;
 } 
 button, 
 button:active, 
 button:focus {
-    outline: none;
-    background: #7FFFD4 !important;
-    color: black !important;
-    border: none !important;
-    box-shadow:none !important;
+  outline: none;
+  background: #7FFFD4 !important;
+  color: black !important;
+  border: none !important;
+  box-shadow:none !important;
 }
 a:active, /* активная/посещенная ссылка */
 a:hover,  /* при наведении */
@@ -29,40 +29,44 @@ a {
   color: #7FFFD4;
 }
 .form-control:focus {
-    outline: none;
-    box-shadow: none !important;
-    border-color: none;
+  outline: none;
+  box-shadow: none !important;
+  border-color: none;
 }
 .custom-control-input:focus ~ .custom-control-label::before {
-    box-shadow:none !important;
+  box-shadow:none !important;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #7FFFD4 !important;
+  background-color: #7FFFD4 !important;
 }
 span{
-    font-size: 17px;
+  font-size: 17px;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-    input[type='range'] {
-      overflow: hidden;
-      width: 100%;
-      -webkit-appearance: none;
-      background-color: #13bba4;
-      outline: none;
-    }
-    
-    input[type='range']::-webkit-slider-runnable-track {
-      height: 20px;
-      -webkit-appearance: none;
-      color: #13bba4;
-      margin-top: -1px;
-    }
-    
-    input[type='range']::-webkit-slider-thumb {
-      width: 5px;
-      -webkit-appearance: none;
-      height: 20px;
-      cursor: ew-resize;
-      background: white;
-      box-shadow: -80px 0 0 80px #13bba4;
-    }
+  input[type='range'] {
+    overflow: hidden;
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #13bba4;
+    outline: none;
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 20px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 5px;
+    -webkit-appearance: none;
+    height: 20px;
+    cursor: ew-resize;
+    background: white;
+    box-shadow: -80px 0 0 80px #13bba4;
+  }
 
 }
 /** FF*/
@@ -78,4 +82,7 @@ input[type="range"]::-ms-fill-lower {
 }
 input[type="range"]::-ms-fill-upper {  
   background-color: #9a905d;
+}
+.row{
+  margin: 0px;
 }

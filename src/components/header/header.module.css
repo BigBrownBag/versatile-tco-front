@@ -1,4 +1,4 @@
-.service-header {
+.service_header {
     background-color: black;   
     display: flex;
     justify-content: space-between;
@@ -9,13 +9,13 @@
     margin: 0;
 }
 
-.service-header img{
-    width: 89px;
-    height: 66px;
+.service_header img{
+    width: 180px;
+    height: 106px;
     margin-left: 3rem;
 }
 
-.service-header .links{
+.service_header .links{
     text-decoration: none;
     font-size: 36px;
     line-height: 42px;
@@ -25,21 +25,21 @@
     margin-right: 4rem;
 }
 
-.service-header .links .support-link{
+.service_header .links .support_link{
     text-decoration: none;
 }
 
-.service-header .links .another-link{
+.service_header .links .another_link{
     text-decoration: none;
     padding-right: 2rem;
 }
 
-.wrapp-login {
+.wrapp_login {
     font-size: 26px;
     margin-top: 2px;
 }
 
-.wrapp-login span{
+.wrapp_login span{
     color:#7FFFD4;
     font-size: 26px;
 }
